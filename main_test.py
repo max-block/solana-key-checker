@@ -7,4 +7,4 @@ def test():
     out = child.read().strip()
     child.expect(pexpect.EOF)
 
-    assert "OK: 2, ERROR: 2" in out
+    assert "OK: 3, ERROR: 2, ALL: 5, UNIQUE: 4" in out

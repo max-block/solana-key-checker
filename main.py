@@ -48,6 +48,7 @@ def main():
         exit(1)
 
     keys = load_keys(sys.argv[1])
+    unique_key_count = len(set(map(lambda x: x.public, keys)))
     ok_count = 0
     error_count = 0
     for key in keys:
@@ -56,7 +57,7 @@ def main():
             ok_count += 1
         else:
             error_count += 1
-    print(f"\nOK: {ok_count}, ERROR: {error_count}")
+    print(f"\nOK: {ok_count}, ERROR: {error_count}, ALL: {len(keys)}, UNIQUE: {unique_key_count}")
 
 
 if __name__ == "__main__":
